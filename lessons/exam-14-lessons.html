@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CN practical · 14 exam lessons</title>
+<style>
+:root{color-scheme:light dark;--paper:light-dark(#fcfaf5,#171918);--ink:light-dark(#242d29,#eceee7);--soft:light-dark(#eeeae0,#242925);--line:light-dark(#cbcfc3,#414a42);--muted:light-dark(#59645b,#abb6ac);--accent:light-dark(#973c1f,#f4ac82);--green:light-dark(#276349,#9dcea7);--code:light-dark(#edf0e8,#202720);--font:ui-sans-serif,system-ui,sans-serif;--radius:8px;font-family:var(--font);color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit;color:inherit}button,a,input,select,summary{touch-action:manipulation}button,select,input[type=text],input[type=number],textarea{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:10px 12px}button{cursor:pointer;min-height:42px}button:disabled{opacity:.5;cursor:default}button:hover:not(:disabled){background:var(--soft)}button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}button.primary:hover{background:var(--accent)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}a{color:var(--accent);text-underline-offset:3px}p,li{line-height:1.75}p{margin:.5em 0 1em}h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.15;font-weight:400;letter-spacing:-.025em}h1{font-size:clamp(2rem,5vw,3.7rem);margin:12px 0 20px}h2{font-size:clamp(1.7rem,4vw,2.7rem);margin:10px 0 16px}h3{font-size:1.4rem;margin:28px 0 12px}.wrap{max-width:1120px;margin:auto;padding:32px 26px 60px}.masthead{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--ink);padding-bottom:14px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.intro{max-width:760px}.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}.muted,.caption{color:var(--muted)}.caption{font-size:.88rem;line-height:1.6}.toolbar{display:flex;gap:10px;align-items:end;flex-wrap:wrap;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:24px 0}.toolbar label{flex:1;min-width:260px}label{display:block;font-size:.9rem}select{display:block;width:100%;margin-top:6px}input[type=text],input[type=number]{max-width:100%;margin-top:6px}input[type=checkbox]{accent-color:var(--green);width:18px;height:18px}.inline-label{display:flex;gap:8px;align-items:center}.question-header{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.q-number{font-family:Georgia,serif;font-size:2.8rem;color:var(--accent)}.tag{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:30px;padding:5px 10px}.prompt{padding-left:18px;border-left:3px solid var(--accent);margin-bottom:28px}.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.callout{padding:16px 18px;background:var(--soft);border-radius:var(--radius);margin:20px 0}.callout p:last-child{margin-bottom:0}.steps{counter-reset:steps;list-style:none;padding:0}.steps>li{position:relative;padding:0 0 20px 42px}.steps>li:before{counter-increment:steps;content:counter(steps,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:ui-monospace,monospace;color:var(--accent);font-size:.85rem}.steps strong{font-weight:650}code,pre,textarea,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}code{font-size:.9em;overflow-wrap:anywhere}pre{background:var(--code);border-radius:var(--radius);padding:18px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.85rem;line-height:1.7;tab-size:4;margin:12px 0 16px}pre code{font-size:inherit}table{border-collapse:collapse;width:100%;font-size:.9rem;margin:16px 0}th,td{padding:11px 9px;text-align:left;border-bottom:1px solid var(--line);line-height:1.6;overflow-wrap:anywhere}th{font-weight:650}.table-wrap{overflow-x:auto}.table-wrap table{min-width:400px}details{margin:18px 0;border-bottom:1px solid var(--line);padding-bottom:12px}summary{cursor:pointer;font-weight:600;line-height:1.7;padding:6px 0}.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:14px 0}.controls label{max-width:100%}.controls select{min-width:100px}.controls input{width:190px}.feedback{line-height:1.7;min-height:1.7em;margin:12px 0}.result{padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:18px 0}.figure{margin:24px 0}svg.diagram{display:block;width:100%;height:230px;overflow:visible}svg.diagram .wire{stroke:var(--line);stroke-width:2;fill:none}svg.diagram .live{stroke:var(--green);stroke-width:3}svg.diagram .broken{stroke:var(--accent);stroke-dasharray:5 5;opacity:.6}svg.diagram .node{fill:var(--soft);stroke:var(--line);stroke-width:1}svg.diagram text{fill:var(--ink);font-family:var(--font);font-size:13px}svg.diagram .route{stroke:var(--accent);stroke-width:4}svg.diagram .weight{fill:var(--paper)}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0}.flow span{padding:10px 12px;border-bottom:2px solid var(--line)}.flow .on{border-color:var(--green);background:var(--soft)}.flow b{font-weight:400;color:var(--muted)}.bits{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;margin:18px 0}.bits button{text-align:center;background:var(--code);padding:12px 0;font-family:ui-monospace,monospace;font-size:1.2rem}.bits button span{font-family:var(--font);display:block;font-size:.7rem;margin-top:6px}.bits button.parity{background:var(--soft)}.bits button[aria-pressed=true]{outline:2px dashed var(--accent);outline-offset:2px}.quiz{padding:18px 0;border-top:1px solid var(--line);margin:28px 0}.quiz fieldset{padding:0;border:0}.quiz legend{font-weight:600;line-height:1.7;margin-bottom:14px}.quiz button{margin:0 8px 8px 0;text-align:left}.code-heading{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}.code-heading strong{margin-right:auto;font-family:ui-monospace,monospace;font-size:.9rem}.code-heading button{font-size:.8rem;min-height:34px;padding:6px 10px}.checklist{list-style:none;padding:0}.checklist li{margin:10px 0}.checklist label{display:flex;align-items:start;gap:10px;line-height:1.7}.checklist input{flex-shrink:0;margin-top:4px}.sources{font-size:.85rem;color:var(--muted);line-height:1.8;margin-top:28px}.sources a{margin-right:14px}.error{color:var(--accent)}.range-bar{display:flex;gap:4px;height:38px;margin:14px 0}.range-bar span{flex:1;background:var(--soft);display:grid;place-items:center;font-size:.85rem}.range-bar span.selected{background:var(--green);color:var(--paper)}.round-change{background:var(--soft)}.socket-lanes{display:grid;grid-template-columns:1fr 1fr;gap:20px}.socket-lanes>div{border-top:2px solid var(--line);padding-top:10px}.socket-lanes>div.active{border-color:var(--accent)}.socket-lanes pre{min-height:100px}.q-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 20px}.q-index a{display:block;padding:9px 0;border-bottom:1px solid var(--line);text-decoration:none;line-height:1.5}.bottom{border-top:1px solid var(--ink);margin-top:38px;padding-top:18px}.memory{padding:18px 0}.memory strong{font-weight:650}body.recall .solution{display:none}.foot-controls{display:flex;justify-content:space-between;gap:10px;margin-top:28px}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}[hidden]{display:none!important}
+@media(max-width:650px){.wrap{padding:20px 16px 40px}.masthead{font-size:.65rem}.columns,.three{grid-template-columns:1fr;gap:0}.toolbar label{min-width:0;width:100%;flex:auto}.toolbar button{flex:1}.q-index{grid-template-columns:1fr}.socket-lanes{gap:12px}.socket-lanes pre{padding:12px;font-size:.75rem}.bits{gap:4px}h3{margin-top:24px}.table-wrap table{min-width:350px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{.toolbar,.foot-controls,.code-heading button,.controls,.quiz button,.masthead,#overview,.bottom{display:none!important}.wrap{max-width:none;padding:0}body{background:white;color:black}pre,td,li{break-inside:avoid}details{break-inside:avoid}h2,h3{break-after:avoid}.solution{display:block!important}}
+.recall-prompt{display:none}body.recall .lesson-content{display:none}body.recall .recall-prompt{display:block}
+</style>
+</head>
+<body>
+<main class="wrap" id="exam-lab">
+<div class="masthead"><span>Computer networks / practical notebook</span><span>31 October 2026</span></div>
+<div class="intro"><p class="eyebrow">14 questions · one slip · one working result</p><h1>Practise the question<br>you might draw.</h1><p>Choose the exact exam question. Learn its pattern, follow the visual, perform the task, and verify the result. Every coding answer uses Python 3; no extra packages are needed.</p></div>
+<details id="overview"><summary>How to prepare tonight · and what repeats</summary><p>You already know Packet Tracer. Give most of your coding time to <strong>Q2, Q4, Q6, Q7, Q8 and Q9</strong>. The other eight are Packet Tracer tasks. This question set replaces IPv4 class identification with actual subnetting and adds a calculator and uppercase service.</p><div class="columns"><div><h3>Six patterns cover all 14</h3><ul><li>Topologies: Q1.</li><li>Error correction: Q2.</li><li>Subnetting: Q3 and Q4.</li><li>Distance vector: Q5 and Q6.</li><li>Sockets: Q7, Q8 and Q9.</li><li>Services and diagnosis: Q10–Q14.</li></ul></div><div><h3>One practice loop</h3><ol><li>Study a worked example.</li><li>Enable “Recall mode” and attempt it from scratch.</li><li>Run the checks and explain your result aloud.</li><li>Change an input or deliberately break one setting.</li><li>Use “Draw a question” for a mixed mock lab.</li></ol></div></div><p>Suggested order: Q4 → Q2 → Q6 → Q7 → Q8 → Q9, then rehearse Q3, Q5 and the service combinations. The completion checkbox is your own practice record, not an automatic assessment.</p><div class="q-index" id="question-index"></div></details>
+<details><summary>Python syntax you will use</summary><table><tr><th>Syntax</th><th>Read it as</th></tr><tr><td><code>int(input(...))</code></td><td>Read text, then convert it to an integer.</td></tr><tr><td><code>^</code> / <code>**</code></td><td>Integer XOR / power. They are different operations.</td></tr><tr><td><code>range(n)</code></td><td>Indices 0 through n−1.</td></tr><tr><td><code>[row[:] for row in table]</code></td><td>Copy every row of a list of lists.</td></tr><tr><td><code>text.encode()</code> / <code>data.decode()</code></td><td>String → UTF-8 bytes / bytes → string.</td></tr><tr><td><code>with socket.socket(...) as s:</code></td><td>Use a socket; close it when the block finishes.</td></tr><tr><td><code>text.upper()</code></td><td>Return the uppercase version of a string.</td></tr><tr><td><code>if __name__ == "__main__":</code></td><td>Run the program only when launched directly.</td></tr></table><p>Socket examples use <code>127.0.0.1</code> for two terminals on one machine. For two physical computers, bind the server to <code>0.0.0.0</code> and set the client’s destination to the server’s reachable LAN IP. Keep matching ports. Python examples within this file are complete pairs; do not mix their message formats.</p></details>
+<div class="toolbar"><label for="question-select">Your question<select id="question-select"></select></label><button class="primary" id="draw" type="button">Draw a question</button><label class="inline-label" style="flex:0 1 auto;min-width:0"><input id="recall" type="checkbox">Recall mode</label></div>
+<p id="draw-status" class="caption" aria-live="polite"></p>
+<article id="lesson"></article>
+<div class="bottom"><label class="inline-label"><input id="practised" type="checkbox">I performed this question successfully without looking.</label><p id="progress" class="caption" aria-live="polite"></p><p class="caption">If a step is unclear, ask your tutor with the question number and the line or setting that confused you. Packet Tracer interface labels vary slightly by version; router commands assume a 2911 with GigabitEthernet0/0, 0/1 and 0/2. Use <code>show ip interface brief</code> to check your actual ports.</p></div>
+<div class="foot-controls"><button id="previous" type="button">← Previous question</button><button id="next" type="button">Next question →</button></div>
+</main>
+
+<script type="text/plain" id="src-hamming">
+def encode(data):
+    if len(data) != 4 or any(bit not in "01" for bit in data):
+        raise ValueError("Enter exactly four binary digits.")
+    h = [0] * 8              # Position 0 is deliberately unused.
+    h[3], h[5], h[6], h[7] = map(int, data)
+    h[1] = h[3] ^ h[5] ^ h[7]
+    h[2] = h[3] ^ h[6] ^ h[7]
+    h[4] = h[5] ^ h[6] ^ h[7]
+    return h
+
+
+def correct(received):
+    h = received[:]          # Preserve the received word for comparison.
+    s1 = h[1] ^ h[3] ^ h[5] ^ h[7]
+    s2 = h[2] ^ h[3] ^ h[6] ^ h[7]
+    s4 = h[4] ^ h[5] ^ h[6] ^ h[7]
+    error = 4 * s4 + 2 * s2 + s1
+    if error != 0:
+        h[error] ^= 1        # 0 becomes 1; 1 becomes 0.
+    return h, error
+
+
+def word(h):
+    return "".join(str(bit) for bit in h[1:])
+
+
+def main():
+    data = input("Four data bits: ").strip()
+    sent = encode(data)
+    print("Transmitted:", word(sent))
+    position = int(input("Position to flip (1-7; 0 for no error): "))
+    if not 0 <= position <= 7:
+        raise ValueError("Choose a position from 0 to 7.")
+    received = sent[:]
+    if position:
+        received[position] ^= 1
+    print("Received:   ", word(received))
+    fixed, error = correct(received)
+    print("Error position:", error)
+    print("Corrected:  ", word(fixed))
+    print("Recovered data:", "".join(str(fixed[i]) for i in (3, 5, 6, 7)))
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except ValueError as error:
+        print(error)
+</script>
+<script type="text/plain" id="src-subnets">
+from ipaddress import IPv4Network
+
+
+def split_in_two(network_text):
+    network = IPv4Network(network_text)
+    if network.prefixlen > 29:
+        raise ValueError("Use /29 or shorter for two conventional host subnets.")
+    return list(network.subnets(prefixlen_diff=1))
+
+
+def main():
+    text = input("Network [192.168.1.0/24]: ").strip()
+    subnets = split_in_two(text or "192.168.1.0/24")
+    for number, subnet in enumerate(subnets, start=1):
+        host_bits = 32 - subnet.prefixlen
+        usable = 2 ** host_bits - 2
+        print(f"\nSubnet {number}: {subnet}")
+        print("Mask:", subnet.netmask)
+        print("Network:", subnet.network_address)
+        print("First host:", subnet.network_address + 1)
+        print("Last host:", subnet.broadcast_address - 1)
+        print("Broadcast:", subnet.broadcast_address)
+        print("Usable hosts:", usable)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except ValueError:
+        print("Enter a valid aligned IPv4 network, /29 or shorter.")
+</script>
+<script type="text/plain" id="src-dvr">
+INF = float("inf")
+
+
+def distance_vector(cost):
+    n = len(cost)
+    distance = [row[:] for row in cost]
+    hop = [[j if i != j and cost[i][j] < INF else None
+            for j in range(n)] for i in range(n)]
+    round_number = 0
+    while True:
+        old = [row[:] for row in distance]
+        changed = False
+        for i in range(n):               # Current router.
+            for k in range(n):           # Direct neighbor.
+                if i == k or cost[i][k] == INF:
+                    continue
+                for j in range(n):       # Destination.
+                    candidate = cost[i][k] + old[k][j]
+                    if candidate < distance[i][j]:
+                        distance[i][j] = candidate
+                        hop[i][j] = k
+                        changed = True
+        round_number += 1
+        print("Round", round_number, distance)
+        if not changed:
+            return distance, hop
+
+
+def path_to(hop, source, target):
+    path = [source]
+    while source != target:
+        source = hop[source][target]
+        if source is None:
+            return []
+        if source in path:
+            raise ValueError("Routing loop detected.")
+        path.append(source)
+    return path
+
+
+def main():
+    n = int(input("Number of routers (1-26): "))
+    if not 1 <= n <= 26:
+        raise ValueError("Choose 1 to 26 routers.")
+    print("Enter a cost matrix; 999 means no direct link.")
+    cost = []
+    for i in range(n):
+        row = [int(x) for x in input(f"Router {chr(65+i)}: ").split()]
+        if len(row) != n or any(x < 0 for x in row):
+            raise ValueError("Use N nonnegative integers per row.")
+        cost.append([INF if x == 999 else x for x in row])
+        cost[i][i] = 0
+    distance, hop = distance_vector(cost)
+    for i in range(n):
+        print("\nRouter", chr(65+i), "destination / cost / next hop")
+        for j in range(n):
+            next_hop = "-" if hop[i][j] is None else chr(65+hop[i][j])
+            print(chr(65+j), distance[i][j], next_hop)
+    source = input("Source letter: ").strip().upper()
+    target = input("Destination letter: ").strip().upper()
+    if any(len(s) != 1 or not "A" <= s <= chr(64+n) for s in (source, target)):
+        raise ValueError("Use router letters from the network.")
+    i, j = ord(source)-65, ord(target)-65
+    path = path_to(hop, i, j)
+    if path:
+        print("Path:", " -> ".join(chr(65+x) for x in path))
+        print("Minimum cost:", distance[i][j])
+    else:
+        print("No path exists.")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except ValueError as error:
+        print(error)
+</script>
+<script type="text/plain" id="src-message-server">
+import socket
+
+HOST = "127.0.0.1"       # Use 0.0.0.0 to listen for another computer.
+PORT = 5000
+
+
+def main():
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
+        server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        server.bind((HOST, PORT))
+        server.listen(1)
+        print("Waiting for a TCP client...", flush=True)
+        connection, address = server.accept()
+        with connection, connection.makefile("r", encoding="utf-8") as reader:
+            line = reader.readline()     # Our message ends with a newline.
+            if line == "":
+                print("Client disconnected without a message.")
+            else:
+                print("Client address:", address)
+                print("Received:", line.rstrip("\n"))
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except OSError:
+        print("Check the port and network connection.")
+</script>
+<script type="text/plain" id="src-message-client">
+import socket
+
+HOST = "127.0.0.1"       # For another computer, use the SERVER's LAN IP.
+PORT = 5000
+
+
+def main():
+    message = input("Message: ")
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
+        client.connect((HOST, PORT))
+        client.sendall((message + "\n").encode("utf-8"))
+    print("Message sent; check the server terminal.")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except OSError:
+        print("Start the server first and check its IP and port.")
+</script>
+<script type="text/plain" id="src-calculator-server">
+import json
+import math
+import socket
+
+HOST = "127.0.0.1"
+PORT = 5001
+
+
+def calculate(a, operator, b):
+    a, b = float(a), float(b)
+    if not math.isfinite(a) or not math.isfinite(b):
+        raise ValueError("Use finite numbers.")
+    operator = {"−": "-", "×": "*", "÷": "/"}.get(operator, operator)
+    if operator == "+":
+        result = a + b
+    elif operator == "-":
+        result = a - b
+    elif operator == "*":
+        result = a * b
+    elif operator == "/":
+        if b == 0:
+            raise ZeroDivisionError
+        result = a / b
+    else:
+        raise ValueError("Unsupported operator.")
+    if not math.isfinite(result):
+        raise ValueError("Result is too large.")
+    return result
+
+
+def main():
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
+        server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        server.bind((HOST, PORT))
+        server.listen(1)
+        print("Calculator ready; Ctrl+C stops the server.", flush=True)
+        while True:
+            connection, address = server.accept()
+            with connection, connection.makefile("r", encoding="utf-8") as reader:
+                line = reader.readline()
+                if line == "":
+                    continue
+                try:
+                    request = json.loads(line)
+                    result = calculate(request["a"], request["op"], request["b"])
+                    reply = {"result": result}
+                except ZeroDivisionError:
+                    reply = {"error": "Cannot divide by zero."}
+                except (ValueError, TypeError, KeyError, OverflowError):
+                    reply = {"error": "Send two finite numbers and +, -, *, or /."}
+                connection.sendall((json.dumps(reply) + "\n").encode("utf-8"))
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Server stopped.")
+    except OSError:
+        print("Check the port or restart the other terminal.")
+</script>
+<script type="text/plain" id="src-calculator-client">
+import json
+import math
+import socket
+
+HOST = "127.0.0.1"
+PORT = 5001
+
+
+def main():
+    a = float(input("First number: "))
+    operator = input("Operator (+, -, *, /): ").strip()
+    b = float(input("Second number: "))
+    if not math.isfinite(a) or not math.isfinite(b):
+        raise ValueError
+    request = {"a": a, "op": operator, "b": b}
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
+        client.settimeout(5)
+        client.connect((HOST, PORT))
+        client.sendall((json.dumps(request) + "\n").encode("utf-8"))
+        with client.makefile("r", encoding="utf-8") as reader:
+            line = reader.readline()
+        if line == "":
+            print("Server disconnected without a result.")
+            return
+        reply = json.loads(line)
+        if "error" in reply:
+            print("Error:", reply["error"])
+        else:
+            print("Result:", reply["result"])
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except ValueError:
+        print("Enter finite numbers and use a matching calculator server.")
+    except OSError:
+        print("No response. Start the server and check its IP and port.")
+</script>
+<script type="text/plain" id="src-uppercase-server">
+import socket
+
+HOST = "127.0.0.1"
+PORT = 5002
+
+
+def main():
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as server:
+        server.bind((HOST, PORT))
+        print("UDP uppercase server ready.", flush=True)
+        while True:
+            data, address = server.recvfrom(4096)
+            try:
+                text = data.decode("utf-8")
+            except UnicodeDecodeError:
+                server.sendto(b"Use UTF-8 text.", address)
+                continue
+            if text == "exit":
+                server.sendto(b"Bye", address)
+                break
+            reply = text.upper()
+            server.sendto(reply.encode("utf-8"), address)
+            print("Received:", text, "| Replied:", reply, flush=True)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Server stopped.")
+    except OSError:
+        print("Check whether the port is already in use.")
+</script>
+<script type="text/plain" id="src-uppercase-client">
+import socket
+
+HOST = "127.0.0.1"
+PORT = 5002
+
+
+def main():
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as client:
+        client.settimeout(5)
+        while True:
+            text = input("Lowercase text (exit to stop): ")
+            data = text.encode("utf-8")
+            if len(data) > 1000:
+                print("Use at most 1000 UTF-8 bytes for this lab.")
+                continue
+            client.sendto(data, (HOST, PORT))
+            reply, address = client.recvfrom(4096)
+            if address != (HOST, PORT):
+                print("Unexpected sender; restart the client.")
+                break
+            print("Server:", reply.decode("utf-8"))
+            if text == "exit":
+                break
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except OSError:
+        print("No reply. Check the server, then restart the client.")
+</script>
+
+<script>
+(() => {
+'use strict';
+const $=id=>document.getElementById(id);
+const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const table=(headers,rows)=>`<div class="table-wrap" role="region" aria-label="Data table; scroll horizontally on a narrow screen"><table${headers.length>=4?' style="min-width:620px"':''}><thead><tr>${headers.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const steps=items=>`<ol class="steps">${items.map(s=>`<li>${s}</li>`).join('')}</ol>`;
+const note=(title,text)=>`<div class="callout"><strong>${title}</strong><p>${text}</p></div>`;
+const code=(title,text)=>`<details class="solution"><summary>${title}</summary><pre><code>${escape(text)}</code></pre></details>`;
+const sources={pt:['Packet Tracer server help','https://tutorials.ptnetacad.net/help/default/config_servers.htm'],rip:['Cisco RIP commands','https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_rip/command/irr-cr-book/irr-cr-rip.html'],dv:['RFC 2453 · distance vector','https://www.rfc-editor.org/rfc/rfc2453'],relay:['Cisco · DHCP relay','https://www.cisco.com/c/en/us/support/docs/ip/dynamic-address-allocation-resolution/27470-100.html'],sockets:['Python · socket programming','https://docs.python.org/3/howto/sockets.html'],ip:['Python · ipaddress','https://docs.python.org/3/library/ipaddress.html'],hamming:['UNB · Hamming code','https://www.ece.unb.ca/tervo/ee4253/hamming.shtml']};
+sources.stp=['Cisco 2960 · spanning tree','https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/12-2_52_se/configuration/guide/2960scg/swstp.pdf'];
+sources.interfaces=['Cisco · LAN interface configuration','https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/interface/configuration/15-mt/ir-15-mt-book/ir-cfg-lan-if.html'];
+const sourceLinks=keys=>'<div class="sources">References: '+keys.map(k=>`<a href="${sources[k][1]}" target="_blank" rel="noreferrer">${sources[k][0]}</a>`).join('')+'</div>';
+const programNames={hamming:'q2_hamming.py',subnets:'q4_subnets.py',dvr:'q6_dvr.py','message-server':'q7_server.py','message-client':'q7_client.py','calculator-server':'q8_server.py','calculator-client':'q8_client.py','uppercase-server':'q9_server.py','uppercase-client':'q9_client.py'};
+const programs=Object.fromEntries(Object.keys(programNames).map(key=>[key,$('src-'+key).textContent.trim()+'\n']));
+function python(key){return `<details class="solution"><summary>Python · ${programNames[key]}</summary><div class="code-heading"><strong>${programNames[key]}</strong><button type="button" data-copy="${key}">Copy</button><button type="button" data-download="${key}">Save .py</button></div><pre><code>${escape(programs[key])}</code></pre><p class="caption" data-copy-status="${key}" aria-live="polite"></p></details>`;}
+function quiz(question,options,answer,explanation){return `<div class="quiz" data-answer="${answer}" data-explanation="${escape(explanation)}"><fieldset><legend>Check your understanding: ${question}</legend>${options.map((o,i)=>`<button type="button" data-choice="${i}">${o}</button>`).join('')}</fieldset><p class="feedback" aria-live="polite"></p></div>`;}
+function viva(items){return '<h3>Be ready to explain</h3>'+items.map(([q,a])=>`<details class="solution"><summary>${q}</summary><p>${a}</p></details>`).join('');}
+function checks(items){return '<h3>Show the examiner</h3><ul>'+items.map(i=>`<li>${i}</li>`).join('')+'</ul>';}
+function socketRun(question){const q=question;return `<h3>Run it in two terminals</h3><p>Save both programs into the same practice folder using “Save .py”. Open two terminals in that folder. Start the server, wait for its ready message, then run the client.</p><div class="columns"><div><strong>Terminal 1 · server</strong><pre>python3 q${q}_server.py</pre></div><div><strong>Terminal 2 · client</strong><pre>python3 q${q}_client.py</pre></div></div>`;}
+const subnetRows=[['Lab A','192.168.1.0/25','192.168.1.1 – 192.168.1.126','192.168.1.127','126'],['Lab B','192.168.1.128/25','192.168.1.129 – 192.168.1.254','192.168.1.255','126']];
+const subnetTable=()=>table(['Lab','Network','Usable range','Broadcast','Hosts'],subnetRows);
+const twoLabCLI=`enable
+configure terminal
+hostname R1
+interface gigabitEthernet0/0
+ ip address 192.168.1.1 255.255.255.128
+ no shutdown
+exit
+interface gigabitEthernet0/1
+ ip address 192.168.1.129 255.255.255.128
+ no shutdown
+end
+show ip interface brief
+show ip route
+copy running-config startup-config`;
+const oneLANCLI=`enable
+configure terminal
+interface gigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+end
+show ip interface brief
+copy running-config startup-config`;
+const departmentCLI=`enable
+configure terminal
+hostname R1
+interface gigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+exit
+interface gigabitEthernet0/1
+ ip address 192.168.20.1 255.255.255.0
+ ip helper-address 192.168.10.2
+ no shutdown
+end
+show ip interface brief
+show ip route
+copy running-config startup-config`;
+const routerNote=()=>'<p class="caption">Use a 2911 router and the named interfaces. Answer “no” to the initial configuration dialog if it appears. Paste commands without device prompts. After <code>copy running-config startup-config</code>, accept the filename with Enter.</p>';
+
+const lessons=[
+{id:1,title:'Star, mesh, bus and extended star',type:'Packet Tracer',pattern:'Topology',prompt:'A college wants to design a computer network for its computer laboratories and administrative office. Using Cisco Packet Tracer, design and implement Star, Mesh, Bus, and Extended Star topologies. Assign IP addresses to the devices and verify connectivity using the ping command. Compare the topologies based on cost, reliability, and fault tolerance.',body:()=>`
+<p class="memory"><strong>Remember:</strong> draw the connections → keep each test LAN in one subnet → ping → break one link and compare.</p>
+<div class="controls"><label>Topology<select id="topology-kind"><option value="star">Star</option><option value="mesh">Mesh backbone</option><option value="bus">Logical bus / hub model</option><option value="extended">Extended star</option></select></label><label class="inline-label"><input id="topology-fault" type="checkbox">Simulate the marked failure</label></div><div class="figure"><svg id="topology-svg" class="diagram" role="img" aria-label="Selected network topology"></svg><p id="topology-status" class="caption" aria-live="polite"></p></div>
+<h3>Build four separate examples</h3>${steps(['<strong>Star:</strong> connect 4 PCs to one 2960 switch. Use copper straight-through PC↔switch. Assign <code>192.168.10.10–13</code>, mask <code>255.255.255.0</code>. Ping from .10 to .13.','<strong>Mesh:</strong> connect 3 switches in a triangle; attach one PC to each. Use Auto-Connect for switch↔switch links. Assign PCs <code>192.168.20.10–12/24</code>. This is a full mesh of the switch backbone, with 3 inter-switch links.','<strong>Bus concept:</strong> connect 4 PCs to a Hub-PT, using <code>192.168.30.10–13/24</code>. All attached devices share the medium. The hub’s physical wiring is a star; this is a logical shared-medium approximation, not a native coaxial bus.','<strong>Extended star:</strong> connect one core switch to two access switches. Attach 2 PCs to each access switch. Use <code>192.168.40.10–13/24</code>. All ports may remain in default VLAN 1 for this isolated LAN.','On each PC: <strong>Desktop → IP Configuration → Static</strong>. Give each PC a unique address. Leave the gateway blank in these isolated single-subnet examples.','From <strong>Desktop → Command Prompt</strong>, run <code>ping &lt;peer IP&gt;</code>. Repeat if initial ARP resolution causes a timeout. Test within each topology; the four separate LANs are not routed together.','Demonstrate a failure: remove one PC cable in the star; remove a backbone link in the mesh; discuss a shared bus break; remove an access-switch uplink in the extended star. Record the affected devices.'])}
+${note('Mesh and bus details matter','Spanning Tree blocks a redundant Layer 2 mesh path to prevent loops. After removing an active link, allow STP to reconverge before retesting. A true coaxial bus needs a continuous backbone and end termination; common Packet Tracer builds use a hub to demonstrate the shared-medium behavior. Label the approximation clearly.')}
+${table(['Topology','Cost','Reliability / failure effect'],[['Star','Moderate; one link per PC','One PC cable affects that PC. Central switch failure affects the whole star.'],['Full mesh backbone','High; n(n−1)/2 links among n backbone nodes','Alternative paths improve tolerance. The failed endpoint itself still loses service.'],['True bus','Low cabling cost','A backbone or termination fault can disrupt the segment. A hub model has a central-device failure instead.'],['Extended star','More switches and uplinks','Access-uplink failure affects its branch; core failure affects all branches.']])}
+${checks(['Ping succeeds between PCs within every built topology.','You can identify physical versus logical topology and the central failure points.','Your comparison distinguishes a single access-link failure from a backbone failure.'])}
+${quiz('Why can a mesh switch link appear blocked?', ['Its IP address is missing','STP is preventing a Layer 2 loop','Every mesh link is faulty'],1,'STP can block a redundant switch path while retaining it for recovery. Do not disable STP just to make all links forward.')}
+${sourceLinks(['stp'])}`},
+
+{id:2,title:'Hamming code: introduce, detect and correct',type:'Python',pattern:'Error correction',prompt:'A bank transmits customer transaction data between two computers. Write a program in C/C++/Python/Java to implement Hamming Code, introduce a single-bit transmission error, detect the error, and correct the corrupted bit at the receiver.',body:()=>`
+<p class="memory"><strong>Remember:</strong> parity at 1, 2, 4; data at 3, 5, 6, 7; error position = <code>4*s4 + 2*s2 + s1</code>.</p><p>Use Hamming(7,4) with even parity for each four-bit data word. Position numbers run <strong>left to right</strong>, matching your earlier lab. XOR is 1 for an odd count of ones. Add parity bits so every covered group has even parity.</p>
+<div class="controls"><label>Data bits<input id="ham-data" type="text" value="1011" maxlength="4" inputmode="numeric"></label><button id="ham-encode" type="button">Encode</button></div><p id="ham-error" class="error" role="alert"></p><p>Click one bit below to introduce an error; click it again to clear it.</p><div id="ham-bits" class="bits"></div><div id="ham-result" class="result" aria-live="polite"></div>
+${table(['Parity','Data used to generate it','Full group rechecked at receiver'],[['P1','3, 5, 7','1, 3, 5, 7'],['P2','3, 6, 7','2, 3, 6, 7'],['P4','5, 6, 7','4, 5, 6, 7']])}
+${steps(['Place four data bits into an eight-element list. Leave index 0 unused, so list indices match bit positions.','Calculate P1, P2 and P4 using <code>^</code>. Print the transmitted seven-bit word.','Make a copy and flip the chosen position with <code>received[position] ^= 1</code>.','Recheck each full parity group. The check results are S1, S2 and S4.','Read <code>S4 S2 S1</code> as a binary number; flip that position if it is nonzero. Recover the data from 3, 5, 6, 7.'])}
+${python('hamming')}<div class="solution"><pre>python3 q2_hamming.py
+Four data bits: 1011
+Position to flip: 5
+
+Transmitted: 0110011
+Received:    0110111
+Error position: 5
+Corrected:   0110011
+Recovered data: 1011</pre></div>
+${note('Syntax and assumption','<code>map(int, data)</code> converts each digit to an integer. <code>h[1:]</code> skips unused index 0. <code>"".join(...)</code> joins bits without spaces. This decoder assumes at most one flipped bit; ordinary Hamming(7,4) can miscorrect a two-bit error.')}
+${checks(['Run 1011 with position 5 and show sent, received, detected position and corrected data.','Try a parity-bit error at position 1, then position 0 for no error.','Explain why syndrome 101₂ identifies position 5.'])}
+${quiz('S1=1, S2=1, S4=0. Which position is corrupted?', ['1','3','6'],1,'Read S4 S2 S1 = 011₂ = 3. The weight of S4 is four, S2 is two, and S1 is one.')}
+${viva([['Why are parity positions powers of two?','The binary digits of position numbers select their check groups. Each single-bit position has a unique pattern of failed checks.'],['Does Hamming encrypt the bank’s data?','No. This exercise provides error correction, not confidentiality or authentication.']])}${sourceLinks(['hamming'])}`},
+
+{id:3,title:'Two /25 labs with router connectivity',type:'Packet Tracer',pattern:'Subnetting',prompt:'A college wants to divide its network 192.168.1.0/24 into two subnets for two computer laboratories. Using Cisco Packet Tracer, calculate the subnet mask, assign IP addresses to PCs in each subnet, configure the router for communication between the subnets, and verify connectivity using the ping command.',body:()=>`
+<p class="memory"><strong>Remember:</strong> /24 → borrow 1 bit → /25 → mask 255.255.255.128 → 126 usable hosts per subnet.</p><div class="figure"><svg class="diagram" id="subnet-svg" role="img" aria-label="Lab A and Lab B connected by a router"></svg></div>${subnetTable()}
+<h3>Address plan</h3>${table(['Device / port','IPv4','Mask','Default gateway'],[['R1 G0/0 → SW-A','192.168.1.1','255.255.255.128','—'],['R1 G0/1 → SW-B','192.168.1.129','255.255.255.128','—'],['PC-A1 / PC-A2','192.168.1.10 / .20','255.255.255.128','192.168.1.1'],['PC-B1 / PC-B2','192.168.1.130 / .140','255.255.255.128','192.168.1.129']])}
+${steps(['Place one 2911, two 2960 switches and two PCs per lab. Cable PC↔switch and switch↔router using straight-through cables. Lab A uses G0/0; Lab B uses G0/1.','Set the router interface addresses using the commands below. Apply <code>no shutdown</code> on both interfaces.','On each PC, open <strong>Desktop → IP Configuration → Static</strong>; enter its address, /25 mask and its own lab’s gateway.','Check <code>show ip interface brief</code>: both used ports must be up/up. Check <code>show ip route</code>: both /25 networks should be connected.','Ping a local peer, the local gateway, and then a remote-lab PC. From PC-A1, try <code>ping 192.168.1.130</code>.','Save the .pkt file and router configuration. A single router already knows both directly connected networks; no RIP or static route is needed here.'])}
+${routerNote()}${code('Router configuration · R1',twoLabCLI)}
+${note('Common mistakes','Do not assign .0, .127, .128 or .255 to these PCs: they are subnet IDs or broadcasts. PC-B’s gateway is .129, not .1. Using /24 on the PCs would make them incorrectly treat the other lab as locally attached. Each gateway uses one of the 126 usable addresses, leaving 125 for other devices in that subnet.')}
+${checks(['PC-A1 can ping PC-B1 and the reply returns.','You can show the two /25 routes and all PCs’ /25 masks.','You can explain why PC-B uses the second router interface as its gateway.'])}
+${quiz('Which is Lab B’s first usable address?', ['192.168.1.128','192.168.1.129','192.168.1.127'],1,'192.168.1.128 is the second subnet ID. Its first usable address is .129; .255 is its broadcast.')}${sourceLinks(['ip','interfaces'])}`},
+
+{id:4,title:'Calculate the two subnets in Python',type:'Python',pattern:'Subnetting',prompt:'An organization wants to divide the network 192.168.1.0/24 into two subnets. Write a program in C/C++/Python/Java to calculate the subnet mask and the number of usable host addresses for each subnet.',body:()=>`
+<p class="memory"><strong>Remember:</strong> two equal subnets need one borrowed bit. <code>2 ** 7 - 2 = 126</code> hosts in each /25.</p>
+<div class="controls"><label>Equal subnets for the /24<select id="subnet-count"><option value="2">2 subnets</option><option value="4">4 subnets · variation</option><option value="8">8 subnets · variation</option></select></label></div><div id="subnet-calculation" aria-live="polite"></div>
+${steps(['A /24 has 32−24 = 8 host bits. Two subnets require <code>2 ** borrowed_bits = 2</code>, so borrow one.','New prefix = 24+1 = 25. Its last mask octet is binary 10000000, decimal 128: <code>255.255.255.128</code>.','Remaining host bits = 32−25 = 7. Each subnet has 128 total addresses and 126 conventional usable host addresses.','Block size = 256−128 = 128. The subnet IDs are .0 and .128.','In Python, <code>IPv4Network(...).subnets(prefixlen_diff=1)</code> splits the parent network in two. Print mask, ranges and usable count.'])}
+${python('subnets')}<div class="solution"><pre>python3 q4_subnets.py
+Network [192.168.1.0/24]: [press Enter]
+
+Subnet 1: 192.168.1.0/25
+Mask: 255.255.255.128
+Usable hosts: 126
+
+Subnet 2: 192.168.1.128/25
+Mask: 255.255.255.128
+Usable hosts: 126</pre>${subnetTable()}</div>
+${note('Know the arithmetic as well as the library','<code>IPv4Network</code> is part of Python’s standard library, so no pip install is required. <code>prefixlen_diff=1</code> means “borrow one additional network bit.” <code>enumerate(..., start=1)</code> numbers the results. If asked for four subnets, borrow two bits: /26 and 62 hosts each. This lesson’s executable program always splits into exactly two.')}
+${checks(['Print two subnets, mask 255.255.255.128 and 126 usable hosts each.','Explain network and broadcast addresses, rather than reporting 128 usable hosts.','Try 192.168.2.0/24; explain why the subnet sizes remain identical.'])}
+${quiz('How many addresses does one /25 contain before excluding network and broadcast?', ['126','128','256'],1,'Seven host bits give 2**7 = 128 total addresses. Subtract two for 126 conventional usable hosts.')}${viva([['Why does the prefix get larger when subnets get smaller?','More bits identify the network, leaving fewer bits for hosts. /25 fixes one more bit than /24.']])}${sourceLinks(['ip'])}`},
+
+{id:5,title:'RIPv2 across three branch routers',type:'Packet Tracer',pattern:'Distance vector',prompt:'A company has three branch offices connected through three routers. Configure RIP (Distance Vector Routing Protocol) in Cisco Packet Tracer to exchange routing information and establish communication between all branch networks. Verify connectivity using the ping command.',body:()=>`
+<p class="memory"><strong>Remember:</strong> address every link → bring ports up → <code>router rip</code> → <code>version 2</code> → advertise attached networks → verify R routes.</p><div class="figure"><svg class="diagram" id="rip-svg" role="img" aria-label="Three branch routers in a chain"></svg></div>
+${table(['Device / interface','Address / mask','Connects to'],[['R1 G0/0','192.168.10.1 /24','Branch 1 switch'],['R1 G0/1','10.0.12.1 /30','R2 G0/1'],['R2 G0/0','192.168.20.1 /24','Branch 2 switch'],['R2 G0/1','10.0.12.2 /30','R1 G0/1'],['R2 G0/2','10.0.23.1 /30','R3 G0/1'],['R3 G0/0','192.168.30.1 /24','Branch 3 switch'],['R3 G0/1','10.0.23.2 /30','R2 G0/2'],['PC1 / PC2 / PC3','PC1: 192.168.10.10/24<br>PC2: 192.168.20.10/24<br>PC3: 192.168.30.10/24','Gateway: corresponding 192.168.x.1']])}
+${steps(['Place three 2911 routers, three switches and at least one PC per branch. Use straight-through for LAN links and Auto-Connect for router↔router Ethernet links.','Set interface IPs using the plan. /24 = 255.255.255.0; /30 = 255.255.255.252. Bring every used port up with <code>no shutdown</code>.','Assign each PC its branch /24 address and the local router LAN address as gateway.','Apply the complete router configurations below. RIP <code>network</code> statements select directly attached major networks; do not type a remote destination as if it were a static route.','Allow routing updates to propagate. Run <code>show ip protocols</code> and <code>show ip route</code>. Remote branch routes should begin with <code>R</code>.','From PC1, ping <code>192.168.20.10</code> and <code>192.168.30.10</code>. Test the reverse direction too.','Save each router’s configuration and the .pkt file.'])}${routerNote()}
+${[1,2,3].map(n=>code('Complete router configuration · R'+n,ripConfig(n))).join('')}
+${note('What the commands mean','<code>version 2</code> carries subnet masks; <code>no auto-summary</code> keeps subnet information across classful boundaries. <code>network 10.0.0.0</code> selects the 10.x transit interfaces. <code>passive-interface G0/0</code> suppresses updates toward PCs while still advertising the LAN through other RIP interfaces.')}
+${checks(['Used interfaces are up/up; connected peers ping before you troubleshoot RIP.','R1 has an R route to 192.168.30.0/24, and R3 has one to 192.168.10.0/24.','PC1↔PC3 ping succeeds with correct PC gateways.'])}
+${quiz('What does R at the start of a route mean?', ['Directly connected network','RIP-learned route','Router interface is down'],1,'Cisco show ip route marks RIP-learned routes with R; C marks connected routes. RIP uses hop count, not arbitrary cable weights.')}${viva([['How is Q5 different from Q6?','Q5 configures a real simulated routing protocol in Packet Tracer. Q6 writes a program that models the distance vector calculations.']])}${sourceLinks(['rip','dv'])}`},
+
+{id:6,title:'Simulate distance vector and find a route',type:'Python',pattern:'Distance vector',prompt:'A company connects three branch offices through routers. Write a program in C/C++/Python/Java to simulate the Distance Vector Routing Algorithm and find the shortest path between routers.',body:()=>`
+<p class="memory"><strong>Remember:</strong> <code>candidate = cost[i][k] + old[k][j]</code>. If smaller, update the distance and make neighbor k the next hop.</p><p>Each router starts with direct-link costs. In every synchronous round it uses the neighbors’ <em>previous-round</em> tables. This is a static weighted simulation; RIP itself uses hop count.</p>
+<div class="controls"><label>A–C direct cost<input id="dv-ac" type="number" value="7" min="0" max="100"></label><button id="dv-start" type="button">Use cost</button><button id="dv-next" class="primary" type="button">Next round</button></div><p id="dv-error" class="error" role="alert"></p><svg class="diagram" id="dv-svg" role="img" aria-label="Routers A B C with weighted links"></svg><div id="dv-result" aria-live="polite"></div>
+${steps(['Read N and an N×N cost matrix. Convert the input sentinel 999 to <code>float("inf")</code>; diagonal entries are zero.','Initialize the distance table from direct costs, and next hops from directly reachable neighbors.','At the start of a round, copy every row with <code>old = [row[:] for row in distance]</code>.','Loop current router i, direct neighbor k, and destination j. Test the candidate cost. On improvement, set <code>hop[i][j] = k</code>.','Repeat until a full round makes no change. That final unchanged round confirms convergence.','Follow next hops to print the path. If the distance is infinite, report no path.'])}
+${python('dvr')}<div class="solution"><pre>python3 q6_dvr.py
+Number of routers: 3
+Router A: 0 1 7
+Router B: 1 0 2
+Router C: 7 2 0
+Source letter: A
+Destination letter: C
+
+Path: A -> B -> C
+Minimum cost: 3</pre></div>
+${note('Understand the Python','<code>old = distance</code> shares the same mutable table; it does not freeze the previous round. <code>row[:]</code> makes a row copy. <code>chr(65+i)</code> converts indices 0,1,2 to A,B,C. <code>None</code> means no next hop. Use strict <code>&lt;</code>, so equal-cost candidates do not keep generating updates.')}
+${checks(['Show initial costs, updates, final routing tables, next hops, path and total cost.','Change direct A–C to 2: it should beat the route through B at cost 3.','Try a disconnected C using rows 0 1 999 / 1 0 999 / 999 999 0; the program must report no path from A to C.'])}
+${quiz('What is A’s next hop to C if the shortest path is A→B→C?', ['A','B','C'],1,'The next hop is the first adjacent router along the route: B. The destination is C.')}${sourceLinks(['dv'])}`},
+
+{id:7,title:'TCP: send and display a message',type:'Python',pattern:'Sockets',prompt:'A college wants to develop a client-server application for sending messages between two computers. Write a program in C/C++/Python/Java using TCP socket programming to send a message from the client to the server and display the received message.',body:()=>`
+<p class="memory"><strong>Remember:</strong> server <code>socket → bind → listen → accept → read</code>; client <code>socket → connect → send</code>.</p><div id="message-visual"></div>
+${steps(['Choose one matching port, here 5000. Create IPv4 TCP sockets with <code>AF_INET</code> and <code>SOCK_STREAM</code>.','The server binds, listens, then waits in <code>accept()</code>. It returns a new connected socket and the peer address.','The client connects and sends the text encoded as bytes. Add a newline to mark the end of this application message.','The server reads one full line from the connected socket and prints the received message.','Both programs close automatically through <code>with</code>. This example handles one message and one connection per run; restart the server for another attempt.'])}
+${python('message-server')}${python('message-client')}${socketRun(7)}
+${note('Why readline instead of a single recv?','TCP is a byte stream: one send is not guaranteed to equal one receive. We define newline-delimited messages; <code>readline()</code> buffers until the delimiter. <code>sendall()</code> handles partial sends. The listening socket accepts; the connected socket transfers the message.')}
+${checks(['Client enters hello college; server prints Received: hello college.','Try an empty message, a long line and Unicode text.','For two computers, change the server bind address and client destination as explained in the syntax panel.'])}
+${quiz('Which socket should the server read from?', ['The socket returned by accept()','The original listening socket'],0,'accept() returns a connected socket for this peer. The listening socket remains responsible for accepting connections.')}${viva([['What if the server is not running?','The TCP connection normally fails. Start the server first and verify the destination IP and matching port.']])}${sourceLinks(['sockets'])}`},
+
+{id:8,title:'TCP: a remote arithmetic calculator',type:'Python',pattern:'Sockets',prompt:'A college wants to develop a client-server application to perform mathematical calculations remotely. Write a program in C/C++/Python/Java using TCP socket programming in which the client sends two numbers and an arithmetic operator (+, −, ×, ÷) to the server. The server performs the calculation and sends the result back to the client.',body:()=>`
+<p class="memory"><strong>Remember:</strong> client sends two numbers and an operator → server calculates → client displays the returned result.</p>
+<div class="controls"><label>First number<input id="calc-a" type="number" value="12" step="any"></label><label>Operator<select id="calc-op"><option>+</option><option>-</option><option>*</option><option>/</option></select></label><label>Second number<input id="calc-b" type="number" value="3" step="any"></label><button id="calc-go" class="primary" type="button">Trace calculation</button></div><div id="calc-result" class="result" aria-live="polite"></div><p id="calc-error" class="error" role="alert"></p>
+${steps(['Use port 5001 and a TCP connection. Keep the request format explicit: one JSON object per line, such as <code>{"a":12,"op":"/","b":3}</code>.','The client converts inputs using <code>float()</code>, creates a dictionary, serializes it with <code>json.dumps()</code>, adds a newline and sends bytes.','The server reads the complete line, decodes the JSON, validates the numbers, and chooses one arithmetic branch. It never evaluates arbitrary code.','For division, check b==0 before dividing. Return an error message rather than crashing.','Serialize a result or error object and send it back. The client reads the response and displays it. The server stays running for new client connections.'])}
+${python('calculator-server')}${python('calculator-client')}${socketRun(8)}
+${note('Python syntax and wire format','<code>json.dumps</code> means dictionary → text; <code>json.loads</code> means text → dictionary. <code>request["a"]</code> retrieves a field. The server accepts ASCII -, *, / and also normalizes −, ×, ÷. A result is a floating-point number, so 12/3 prints 4.0. Floating-point values can have rounding error.')}
+${table(['Client input: a, op, b','Expected response'],[['12, +, 3','15.0'],['12, -, 3','9.0'],['12, *, 3','36.0'],['12, /, 3','4.0'],['12, /, 0','Cannot divide by zero.'],['12, %, 3','Unsupported operator error response']])}
+${checks(['The client receives results from the server for all four operations.','The server continues accepting another connection after a division-by-zero request.','Explain the newline delimiter, the JSON fields and why you use explicit arithmetic branches.'])}
+${quiz('Where should division by zero be checked?', ['Only in the visual','At the server before division','After the server crashes'],1,'The server must validate a request before calculating. Client-side checks alone do not protect the server from a malformed request.')}${sourceLinks(['sockets'])}`},
+
+{id:9,title:'UDP: lowercase to uppercase',type:'Python',pattern:'Sockets',prompt:'A college wants to develop a client-server application for string conversion. Write a program in C/C++/Python/Java using UDP socket programming in which the client sends a string to the server, the server converts the string from lowercase to uppercase, and sends the converted string back to the client.',body:()=>`
+<p class="memory"><strong>Remember:</strong> <code>SOCK_DGRAM</code> → <code>recvfrom</code> gives bytes and sender → <code>.upper()</code> → <code>sendto</code> that sender.</p><div class="controls"><label>Text<input id="upper-input" type="text" value="hello college" maxlength="80"></label><button id="upper-go" type="button">Trace datagram</button><label class="inline-label"><input id="upper-drop" type="checkbox">Lose the reply</label></div><div id="upper-result" class="result" aria-live="polite"></div>
+${steps(['Create UDP sockets using <code>socket.AF_INET</code> and <code>socket.SOCK_DGRAM</code>. The server binds to port 5002.','The client encodes a string and sends a datagram with <code>sendto(data, (HOST, PORT))</code>. No listen or accept is needed.','The server unpacks <code>data, address = recvfrom(4096)</code>. Decode the bytes before calling <code>text.upper()</code>.','Encode the converted text and send it to the address returned by <code>recvfrom</code>.','The client receives and displays the uppercase result. It has a five-second timeout if the reply does not arrive. Send lowercase <code>exit</code> to receive Bye and close both programs.'])}
+${python('uppercase-server')}${python('uppercase-client')}${socketRun(9)}
+${note('This question asks for uppercase, not reversal','Use <code>text.upper()</code>, not <code>text[::-1]</code>. UDP keeps datagram boundaries but does not guarantee delivery, ordering or duplicate suppression. A zero-length datagram is valid; it does not mean a TCP-style disconnect. Keep input to at most 1000 UTF-8 bytes for these lab buffers.')}
+${checks(['Send hello college and display HELLO COLLEGE at the client.','Try Mixed 123 → MIXED 123, and an empty string → an empty reply.','Explain how the server obtains the client address without accept().'])}
+${quiz('Where does the server get the reply destination?', ['From recvfrom()','From listen()','The client must always use port 5002 as its own source port'],0,'recvfrom() returns both payload and sender address. The OS normally chooses the client’s source port automatically.')}${sourceLinks(['sockets'])}`},
+
+{id:10,title:'20 PCs: DHCP, DNS and a website',type:'Packet Tracer',pattern:'Services',prompt:'A college has 20 computers connected to a switch. Configure DHCP to assign IP addresses automatically, DNS to resolve the college website\'s domain name, and a Web Server to host the website. Verify website access from client PCs.',body:()=>serviceLesson(10)},
+{id:11,title:'Internal email between two employees',type:'Packet Tracer',pattern:'Services',prompt:'A company wants employees to exchange emails using its internal network. Configure the Email Server, create user accounts, configure email clients on two PCs, and verify email delivery.',body:()=>emailLesson()},
+{id:12,title:'Two departments share DHCP, DNS and web',type:'Packet Tracer',pattern:'Services',prompt:'A college has two departments connected to a router. Configure DHCP for automatic IP allocation, DNS for domain name resolution, and a Web Server accessible from both departments. Test connectivity and website access.',body:()=>serviceLesson(12)},
+{id:13,title:'DHCP, DNS, web and email together',type:'Packet Tracer',pattern:'Services',prompt:'A university wants to provide website access and email services to students and faculty. Configure DHCP, DNS, Web Server, and Email Server in Cisco Packet Tracer. Assign IP addresses automatically and verify website access and email communication.',body:()=>serviceLesson(13)},
+{id:14,title:'DHCP works; the website name does not',type:'Packet Tracer',pattern:'Troubleshooting',prompt:'Users can obtain IP addresses through DHCP but cannot access the college website using its domain name. Configure DHCP, DNS, and Web Server services, identify the configuration issue, and restore website access.',body:()=>troubleshootLesson()}
+];
+
+function ripConfig(n){const links=n===1?[['0/0','192.168.10.1','255.255.255.0'],['0/1','10.0.12.1','255.255.255.252']]:n===2?[['0/0','192.168.20.1','255.255.255.0'],['0/1','10.0.12.2','255.255.255.252'],['0/2','10.0.23.1','255.255.255.252']]:[['0/0','192.168.30.1','255.255.255.0'],['0/1','10.0.23.2','255.255.255.252']];return ['enable','configure terminal','hostname R'+n,...links.flatMap(([port,ip,mask])=>['interface gigabitEthernet'+port,' ip address '+ip+' '+mask,' no shutdown','exit']),'router rip',' version 2',' no auto-summary',' network 192.168.'+(n*10)+'.0',' network 10.0.0.0',' passive-interface gigabitEthernet0/0','end','show ip interface brief','show ip protocols','show ip route','copy running-config startup-config'].join('\n');}
+
+function serverBase(two=false){return table(['Device','IP / mask','Gateway','DNS'],two?[['R1 G0/0','192.168.10.1 /24','—','—'],['R1 G0/1','192.168.20.1 /24','—','—'],['Server-PT in department A','192.168.10.2 /24','192.168.10.1','192.168.10.2'],['Department A PCs','DHCP: 192.168.10.100 onward','192.168.10.1','192.168.10.2'],['Department B PCs','DHCP: 192.168.20.100 onward','192.168.20.1','192.168.10.2']]:[['R1 G0/0','192.168.10.1 /24','—','—'],['Server-PT','192.168.10.2 /24','192.168.10.1','192.168.10.2'],['Client PCs','DHCP: 192.168.10.100 onward','192.168.10.1','192.168.10.2']]);}
+function dhcpTable(two=false,count=20){return table(['Field','Pool '+(two?'DeptA':'College'),...(two?['Pool DeptB']:[])],[['Pool Name',two?'DeptA':'College',...(two?['DeptB']:[])],['Default Gateway','192.168.10.1',...(two?['192.168.20.1']:[])],['DNS Server','192.168.10.2',...(two?['192.168.10.2']:[])],['Start IP Address','192.168.10.100',...(two?['192.168.20.100']:[])],['Subnet Mask','255.255.255.0',...(two?['255.255.255.0']:[])],['Maximum Number of Users',String(count),...(two?['20']:[])]]);}
+function emailSetup(student=false){const users=student?['student','faculty']:['alice','bob'],domain=student?'university.test':'company.test';return `<h3>Email settings</h3>${steps([`On Server-PT, <strong>Services → EMAIL</strong>: enable SMTP and POP3. Set Domain Name to <code>${domain}</code>, then click <strong>Set</strong>.`,`Add users <code>${users[0]}</code> and <code>${users[1]}</code>. For this isolated exercise, give each the example password <code>lab123</code> and click <strong>Add</strong>.`,`On each PC: <strong>Desktop → Email</strong>. Enter the matching settings below and click <strong>Save</strong>.`,`Compose on ${users[0]}’s PC to <code>${users[1]}@${domain}</code>, add a subject and body, and click <strong>Send</strong>. On ${users[1]}’s PC, click <strong>Receive</strong>. Repeat in the reverse direction.`])}${table(['Client field',users[0]+' PC',users[1]+' PC'],[['Your Name',users[0],users[1]],['Email Address',users[0]+'@'+domain,users[1]+'@'+domain],['Incoming Mail Server',student?'mail.university.test':'192.168.10.2',student?'mail.university.test':'192.168.10.2'],['Outgoing Mail Server',student?'mail.university.test':'192.168.10.2',student?'mail.university.test':'192.168.10.2'],['User Name',users[0],users[1]],['Password (example only)','lab123','lab123']])}<p class="caption">The login username is the created account name, not the full email address. SMTP sends mail; POP3 retrieves it. The domain after @ must match the server’s configured email domain.</p>`;}
+function serviceLesson(q){const two=q===12,mail=q===13,domain=mail?'www.university.test':'www.college.test';return `
+<p class="memory"><strong>Remember:</strong> static server → DHCP pool(s) → DNS A record → HTTP On → client DHCP → IP test → name test.${two?' Add DHCP relay for the remote department.':''}${mail?' Then enable email and configure both accounts.':''}</p>
+<div class="figure"><svg class="diagram" id="services-svg" role="img" aria-label="${two?'Two routed departments and a central server':'Clients and one server connected through a switch'}"></svg></div>
+${note('One Server-PT can run several services','For this lab, use one server at 192.168.10.2 to provide DHCP, DNS and HTTP'+(mail?', plus SMTP and POP3':'')+'. Keep its address static and outside all DHCP pools. The custom .test domain is an isolated lab name; no internet is needed.')}
+${serverBase(two)}
+<h3>Build and configure</h3>${steps([two?'<strong>Physical layout:</strong> Dept A switch↔R1 G0/0; Dept B switch↔R1 G0/1. Attach the server and an A-PC to the first switch, and a B-PC to the second. Use straight-through cables.':`<strong>Physical layout:</strong> one 2960-24TT, ${q===10?'20 PCs':'two client PCs'}, one 2911 and one Server-PT. Connect them to the switch with straight-through cables. ${q===10?'Twenty PCs + server + router require 22 switch ports.':''}`,two?'<strong>Router:</strong> set 192.168.10.1/24 and 192.168.20.1/24. On the department B interface add <code>ip helper-address 192.168.10.2</code>. DHCP broadcasts do not normally cross the router.':'<strong>Router:</strong> configure G0/0 as 192.168.10.1/24 with no shutdown. It supplies the advertised default gateway, even though local PC↔server traffic stays in this LAN.','<strong>Server addressing:</strong> Desktop → IP Configuration → Static. Set IP 192.168.10.2, mask 255.255.255.0, gateway 192.168.10.1, DNS 192.168.10.2.','<strong>DHCP:</strong> Services → DHCP → On. Create '+(two?'both named pools':'the named pool')+' using the table below. Click Add for each new pool; select the named pool and Save when editing. Do not rely on the default serverPool.',`<strong>DNS:</strong> Services → DNS → On. Add an <strong>A record</strong>: Name <code>${domain}</code>, Address <code>192.168.10.2</code>. Enter just the hostname, without http://. ${mail?'Also add mail.university.test → 192.168.10.2.':''}`,'<strong>Web:</strong> Services → HTTP → On. Edit index.html to contain a short college welcome message and save it.','<strong>Clients:</strong> Desktop → IP Configuration → DHCP. Confirm address, mask, gateway and DNS from the plan. Use <code>ipconfig /all</code> to inspect them.',`<strong>Verify:</strong> ping the local gateway, then 192.168.10.2. Open Desktop → Web Browser: <code>http://192.168.10.2</code>, then <code>http://${domain}</code>. ${two?'Repeat from a PC in each department.':'Repeat on multiple clients.'}`])}
+${routerNote()}${code('Complete router configuration',two?departmentCLI:oneLANCLI)}
+<h3>DHCP pool values</h3>${dhcpTable(two)}
+${two?note('Why the second pool and helper are necessary','Department B needs a 192.168.20.x lease and gateway .20.1, not an address from department A. The helper on G0/1 relays B’s request to .10.2; its relay information identifies the correct pool. The server needs gateway .10.1 to reply across the router. No RIP is needed: this router directly connects both LANs.'):note('Pool sizing','Starting at .100 with 20 leases gives .100 through .119. Server .2 and gateway .1 are outside that range. If a client already has an old lease, use ipconfig /release then ipconfig /renew, or reselect DHCP in IP Configuration.')}
+${mail?emailSetup(true):''}
+<h3>Watch the service sequence</h3><div class="controls"><button type="button" id="service-next">Next service event</button><span id="service-count" class="caption"></span></div><div id="service-flow" class="flow"></div><p id="service-detail" class="feedback" aria-live="polite"></p>
+${checks([two?'A-PC gets 192.168.10.x; B-PC gets 192.168.20.x, each with its correct gateway.':q===10?'All 20 PCs obtain unique leases in .100–.119 with the correct mask, gateway and DNS.':'Both PCs obtain distinct DHCP leases with the correct DNS server.',`The website loads by IP and by http://${domain}${two?' from both departments':''}.`,...(mail?['student@university.test and faculty@university.test can send and receive messages in both directions.']:[]),'A successful ping proves IP reachability; a loaded page proves HTTP; a domain URL also checks DNS.'])}
+${quiz(two?'Where should the DHCP helper go?':mail?'Which service retrieves the received email?':'Which DHCP value tells a PC where to ask for name resolution?',two?['On R1’s department B interface','On the web page','On a PC’s email account']:mail?['DHCP','POP3','HTTP']:['Default Gateway','DNS Server','Pool Name'],two?0:1,two?'Relay is configured on the interface receiving requests from the remote clients: G0/1.':mail?'POP3 retrieves messages; SMTP sends them.':'The DHCP pool must advertise DNS Server 192.168.10.2, so clients can query the configured DNS service.')}
+${viva(two?[['Why can ordinary ping work while remote DHCP fails?','The router routes addressed unicast packets, but the initial DHCP request is a broadcast. A relay is required when the server is in another subnet.']]:[['Why use a static address on the server?','The DNS records, DHCP DNS option and clients must have a stable service address. Keep that address outside the dynamic lease range.']])}${sourceLinks(two?['pt','relay']:['pt'])}`;}
+
+function emailLesson(){return `
+<p class="memory"><strong>Remember:</strong> static server → SMTP + POP3 → set domain → add users → configure two clients → Send, then Receive.</p><div class="figure"><svg class="diagram" id="email-svg" role="img" aria-label="Alice and Bob exchange email through a mail server"></svg></div>
+${table(['Device','IPv4 / mask','Gateway'],[['Mail Server-PT','192.168.10.2 /24','Leave blank in this isolated LAN'],['Alice PC','192.168.10.10 /24','Leave blank'],['Bob PC','192.168.10.11 /24','Leave blank']])}
+${steps(['Connect two PCs and one Server-PT to a 2960 switch. No router is necessary for this single-subnet exercise.','Set all three devices to Static IP using Desktop → IP Configuration. Use mask 255.255.255.0.','Ping 192.168.10.2 from both PCs before configuring email. You will use the server IP in the email clients, so DNS is not required for this version.'])}
+${emailSetup(false)}
+<h3>What happens to a message?</h3><div class="controls"><button type="button" id="mail-next">Next email event</button><span id="mail-count" class="caption"></span></div><div class="flow" id="mail-flow"></div><p id="mail-detail" class="feedback" aria-live="polite"></p>
+${note('A send is not the same as a receive','After Alice clicks Send, Bob must click Receive to download his message. If the email is rejected, check that the destination account exists, its domain is company.test, the login username is bob, and SMTP/POP3 are both On. The example passwords are only for this disposable lab.')}
+${checks(['Alice sends a message to bob@company.test and Bob receives its subject and body.','Bob replies and Alice clicks Receive to verify the reply.','You can identify server address, mail domain, account username and protocol roles.'])}
+${quiz('Alice sent successfully, but Bob has not downloaded the message. What should Bob do?', ['Enable RIP','Click Receive with a valid POP3 account','Change his mask to /25'],1,'Sending uses SMTP. Bob retrieves stored mail using POP3 after clicking Receive.')}${viva([['Must a mail domain be the server hostname?','No. company.test is the email domain after @. The incoming/outgoing server field identifies the mail server by IP here, or by a resolvable hostname in a DNS-enabled setup.']])}${sourceLinks(['pt'])}`;}
+
+function troubleshootLesson(){return `
+<p class="memory"><strong>Remember:</strong> valid lease does not prove working DNS. Check <code>IP configuration → server reachability → HTTP by IP → name resolution → HTTP by name</code>.</p>
+${serverBase(false)}
+<h3>Establish a known-good configuration</h3>${steps(['Build one router, one switch, a Server-PT and two PCs. Configure R1 G0/0 as 192.168.10.1/24 with no shutdown.','Give the server static 192.168.10.2/24, gateway 192.168.10.1 and DNS 192.168.10.2.','Enable DHCP. Create pool College: start .100, mask 255.255.255.0, gateway .1, DNS .2, maximum 20 users. Enable DHCP on both PCs.','Enable DNS. Add A record <code>www.college.test → 192.168.10.2</code>. Enable HTTP and save a recognizable index.html.','Then diagnose the supplied fault, or deliberately introduce one of the faults below. Do not assume a particular field is wrong until the checks support it.'])}
+${code('Router baseline',oneLANCLI)}
+<h3>Follow the evidence</h3>${table(['Test','What it tells you','Next action'],[['ipconfig /all','IP, mask, gateway and DNS received by the PC','Confirm DNS is 192.168.10.2, not blank or a wrong address.'],['ping 192.168.10.2','IP reachability to the server','If it fails, fix addressing, links or routing before DNS.'],['Browser: http://192.168.10.2','HTTP works without any name lookup','If ping succeeds but HTTP fails, check HTTP service and page.'],['nslookup www.college.test','Whether the configured DNS server returns the right address','Expected result: 192.168.10.2. Check DNS On and the exact A record.'],['Browser: http://www.college.test','DNS and HTTP work together','Retest after repair and a fresh DHCP lease if DNS settings changed.']])}
+<h3>Try four fault scenarios</h3><label>Injected configuration issue<select id="fault-kind"><option value="dhcp">DHCP advertises the wrong DNS address</option><option value="missing">DNS A record is missing</option><option value="wrong">A record points to the wrong web IP</option><option value="http">HTTP service is Off</option></select></label><div class="controls"><button type="button" id="fault-test">Run simulated checks</button><button type="button" id="fault-fix" class="primary">Explain and repair</button></div><div id="fault-result" class="result" aria-live="polite"></div>
+${note('Renew the client after changing the DHCP DNS field','Changing a pool does not instantly rewrite an existing PC lease. Use <code>ipconfig /release</code> then <code>ipconfig /renew</code>, or reselect DHCP in IP Configuration, and inspect the new DNS setting. If the query returns the wrong address, repair the A record and retest; some versions may need DNS cache expiry or clearing.')}
+${checks(['State the observed failure and the configuration field you changed.','Show a valid lease, a successful server ping and a working IP-based page.','Show name resolution returning 192.168.10.2, then load the page by hostname.','Do not claim DHCP allocation proves correct DNS or HTTP.'])}
+${quiz('The website loads by IP but nslookup fails. Where should you investigate first?', ['The DNS client/server path and A record','The web page’s font','RIP metrics'],0,'The successful IP-based page already demonstrates HTTP and server reachability for this test. Inspect the client’s DNS address, DNS service and record next.')}${sourceLinks(['pt','relay'])}`;}
+
+// Diagrams use simple labeled nodes; no external libraries or network calls.
+function diagram(id,nodes,edges,caption=''){const svg=$(id);if(!svg)return;const w=svg.getBoundingClientRect().width||680,h=230;svg.setAttribute('viewBox',`0 0 ${w} ${h}`);let html=`<title>${escape(svg.getAttribute('aria-label'))}</title>`;const positions=nodes.map(n=>({...n,x:n.x*w,y:n.y*h}));for(const edge of edges){const [a,b,label,style]=edge,p=positions[a],q=positions[b];html+=`<line class="wire ${style||''}" x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}"/>`;if(label){const x=p.x+.4*(q.x-p.x),y=p.y+.4*(q.y-p.y);html+=`<rect class="weight" x="${x-20}" y="${y-10}" width="40" height="20"/><text x="${x}" y="${y+4}" text-anchor="middle">${escape(label)}</text>`;}}
+positions.forEach(n=>{const width=n.w||72;html+=`<rect class="node" x="${n.x-width/2}" y="${n.y-19}" width="${width}" height="38" rx="5"/><text text-anchor="middle" x="${n.x}" y="${n.y+4}">${escape(n.label)}</text>`;if(n.sub){const subWidth=n.sub.length*6+8;html+=`<rect class="weight" x="${n.x-subWidth/2}" y="${n.y+25}" width="${subWidth}" height="18"/><text text-anchor="middle" x="${n.x}" y="${n.y+38}" style="font-size:11px">${escape(n.sub)}</text>`;}});if(caption)html+=`<text x="${w/2}" y="225" text-anchor="middle" style="font-size:11px">${escape(caption)}</text>`;svg.innerHTML=html;}
+const N=(label,x,y,sub)=>({label,x,y,sub});
+let refreshDiagram=()=>{};
+function topologyVisual(){const kind=$('topology-kind').value,fault=$('topology-fault').checked;let nodes,edges,text;
+if(kind==='star'){nodes=[N('Switch',.5,.47),N('PC1',.15,.18),N('PC2',.85,.18),N('PC3',.15,.78),N('PC4',.85,.78)];edges=[[0,1,'',fault?'broken':'live'],[0,2],[0,3],[0,4]];text=fault?'PC1 cable fails: PC1 is isolated; PC2, PC3 and PC4 can still communicate.':'Each PC has its own switch link. A failed central switch would disconnect every PC.';}
+if(kind==='mesh'){nodes=[N('SW1',.2,.3),N('SW2',.8,.3),N('SW3',.5,.78)];edges=[[0,1,'',fault?'broken':'live'],[0,2,'','live'],[1,2,'','live']];text=fault?'The SW1–SW2 link fails. A route through SW3 exists; STP can reconverge and restore forwarding.':'Three switches have all three pairwise backbone links. STP keeps a redundant path blocked to avoid loops.';}
+if(kind==='bus'){nodes=[N('PC1',.15,.25),N('PC2',.38,.25),N('PC3',.62,.25),N('PC4',.85,.25),N('Shared bus',.5,.72)];edges=[[0,4,'',fault?'broken':''],[1,4,'',fault?'broken':''],[2,4,'',fault?'broken':''],[3,4,'',fault?'broken':'']];text=fault?'Conceptual true-bus backbone fault: the shared segment is disrupted. In the PT hub approximation, hub failure similarly affects all PCs.':'Shared-medium concept. In Packet Tracer use Hub-PT, and label it a logical-bus approximation with physical star wiring.';}
+if(kind==='extended'){nodes=[N('Core',.5,.16),N('SW-A',.25,.48),N('SW-B',.75,.48),N('PC-A',.25,.8),N('PC-B',.75,.8)];edges=[[0,1,'',fault?'broken':'live'],[0,2],[1,3],[2,4]];text=fault?'SW-A’s uplink fails: its branch loses access to the rest, but the B branch still works.':'Core switch → access switches → PCs. A core failure can disconnect all branches.';}
+if(kind==='bus'){const svg=$('topology-svg'),w=svg.getBoundingClientRect().width||680;svg.setAttribute('viewBox',`0 0 ${w} 230`);const busY=145,left=w*.08,right=w*.92;let html='<title>True bus schematic: PCs tap a common backbone, terminated at both ends</title>';html+=`<line class="wire ${fault?'broken':'live'}" x1="${left}" y1="${busY}" x2="${right}" y2="${busY}"/><line class="wire" x1="${left}" y1="132" x2="${left}" y2="158"/><line class="wire" x1="${right}" y1="132" x2="${right}" y2="158"/>`;[.18,.39,.61,.82].forEach((x,i)=>{x*=w;html+=`<line class="wire" x1="${x}" y1="79" x2="${x}" y2="${busY}"/><rect class="node" x="${x-26}" y="41" width="52" height="38" rx="5"/><text x="${x}" y="65" text-anchor="middle">PC${i+1}</text>`;});html+=`<text x="${w/2}" y="185" text-anchor="middle">${fault?'Backbone disrupted':'Shared backbone + end terminators'}</text>`;svg.innerHTML=html;}else diagram('topology-svg',nodes,edges);$('topology-status').textContent=text;}
+function hamVisual(){let data='1011',flip=0;function render(){const h=[0,0,0,+data[0],0,+data[1],+data[2],+data[3]];h[1]=h[3]^h[5]^h[7];h[2]=h[3]^h[6]^h[7];h[4]=h[5]^h[6]^h[7];const r=h.slice();if(flip)r[flip]^=1;const groups=[[1,3,5,7],[2,3,6,7],[4,5,6,7]],s=groups.map(g=>g.reduce((a,i)=>a^r[i],0)),error=s[0]+2*s[1]+4*s[2],fixed=r.slice();if(error)fixed[error]^=1;$('ham-bits').innerHTML=r.slice(1).map((b,i)=>`<button type="button" class="${[1,2,4].includes(i+1)?'parity':''}" aria-pressed="${flip===i+1}" aria-label="Flip position ${i+1}, currently ${b}">${b}<span>${[1,2,4].includes(i+1)?'P':'D'}${i+1}</span></button>`).join('');$('ham-bits').querySelectorAll('button').forEach((b,i)=>b.onclick=()=>{flip=flip===i+1?0:i+1;render();});$('ham-result').innerHTML=`<p class="mono">Sent ${h.slice(1).join('')} → received ${r.slice(1).join('')}</p>${table(['Check','XOR result','Meaning'],s.map((v,i)=>['S'+[1,2,4][i],String(v),v?'Odd: fails':'Even: passes']))}<p>S4 S2 S1 = <code>${s.slice().reverse().join('')}₂</code> → ${error?'flip position '+error:'no error detected'}. Corrected: <code>${fixed.slice(1).join('')}</code>. Recovered data: <strong>${[3,5,6,7].map(i=>fixed[i]).join('')}</strong>.</p>`;}
+$('ham-encode').onclick=()=>{const text=$('ham-data').value.trim();if(!/^[01]{4}$/.test(text)){$('ham-error').textContent='Enter exactly four 0/1 digits.';return;}$('ham-error').textContent='';data=text;flip=0;render();};render();}
+function subnetVisual(){const count=+$('subnet-count').value,borrowed=Math.log2(count),prefix=24+borrowed,block=256/count;$('subnet-calculation').innerHTML=`<div class="range-bar">${Array.from({length:count},(_,i)=>`<span class="${i===0?'selected':''}">.${i*block}</span>`).join('')}</div><p><strong>/24 + ${borrowed} borrowed bit${borrowed===1?'':'s'} = /${prefix}</strong> · mask <code>255.255.255.${256-block}</code> · ${block} total addresses per subnet · <strong>${block-2} usable hosts</strong></p>${table(['Subnet','First host','Last host','Broadcast'],Array.from({length:count},(_,i)=>[`${i+1}: 192.168.1.${i*block}/${prefix}`,'.'+(i*block+1),'.'+((i+1)*block-2),'.'+((i+1)*block-1)]))}`;}
+function dvrVisual(){let cost=[],history=[],round=0;function start(){const ac=Number($('dv-ac').value);if($('dv-ac').value===''||!Number.isInteger(ac)||ac<0||ac>100){$('dv-error').textContent='Choose an integer cost from 0 to 100.';return;}$('dv-error').textContent='';cost=[[0,1,ac],[1,0,2],[ac,2,0]];let d=cost.map(r=>r.slice());history=[d.map(r=>r.slice())];for(let t=0;t<4;t++){const old=d.map(r=>r.slice());let changed=false;for(let i=0;i<3;i++)for(let k=0;k<3;k++)for(let j=0;j<3;j++){const candidate=cost[i][k]+old[k][j];if(candidate<d[i][j]){d[i][j]=candidate;changed=true;}}history.push(d.map(r=>r.slice()));if(!changed)break;}round=0;render();}
+function render(){const d=history[round],previous=round?history[round-1]:null,final=round===history.length-1;$('dv-next').disabled=final;diagram('dv-svg',[N('A',.18,.6),N('B',.5,.17),N('C',.82,.6)],[[0,1,'1',final&&d[0][2]===3&&cost[0][2]>3?'route':''],[1,2,'2',final&&d[0][2]===3&&cost[0][2]>3?'route':''],[0,2,String(cost[0][2]),final&&cost[0][2]<=3?'route':'']]);$('dv-result').innerHTML=`<p><strong>Round ${round}</strong> · ${round===0?'direct distances only':final?'unchanged: converged':'each router reads the previous round'}</p>${table(['Router','To A','To B','To C'],d.map((row,i)=>[String.fromCharCode(65+i),...row.map((v,j)=>`<span class="${previous&&v!==previous[i][j]?'round-change':''}">${v}</span>`)]))}<p>${final?`A → C costs ${d[0][2]}. ${cost[0][2]>3?'Choose A → B → C.':cost[0][2]<3?'Choose direct A → C.':'Direct A → C and A → B → C tie; the program retains the existing direct route.'}`:'A’s candidate via B is 1 + B’s previous distance to C. Advance to see which route wins.'}</p>`;}
+refreshDiagram=render;$('dv-start').onclick=start;$('dv-next').onclick=()=>{round++;render();};start();}
+function messageVisual(){let step=0;const events=[['bind → listen → accept','socket(SOCK_STREAM)','Server waits; client has created a socket.'],['accept() returns connection','connect((HOST, 5000))','TCP establishes the connection; accept returns a connected socket.'],['reader.readline()','sendall(b"hello college\\n")','Client sends bytes with a newline delimiter.'],['print("Received:", message)','close()','Server displays hello college. This one-message example then closes.']];function render(){const e=events[step];$('message-visual').innerHTML=`<div class="controls"><button id="message-prev" type="button" ${step===0?'disabled':''}>Previous event</button><button id="message-next" class="primary" type="button" ${step===3?'disabled':''}>Next event</button><span class="caption">${step+1} / 4</span></div><div class="socket-lanes"><div><strong>Server</strong><pre>${escape(e[0])}</pre></div><div><strong>Client</strong><pre>${escape(e[1])}</pre></div></div><p aria-live="polite">${e[2]}</p>`;$('message-prev').onclick=()=>{step--;render();};$('message-next').onclick=()=>{step++;render();};}render();}
+function calcVisual(){const a=Number($('calc-a').value),b=Number($('calc-b').value),op=$('calc-op').value;if($('calc-a').value===''||$('calc-b').value===''||!Number.isFinite(a)||!Number.isFinite(b)){$('calc-error').textContent='Enter two finite numbers.';$('calc-result').replaceChildren();return;}$('calc-error').textContent='';const result=op==='/'&&b===0?{error:'Cannot divide by zero.'}:{result:op==='+'?a+b:op==='-'?a-b:op==='*'?a*b:a/b};if('result'in result&&!Number.isFinite(result.result)){delete result.result;result.error='Result is too large.';}$('calc-result').innerHTML=`<div class="flow"><span>Client request</span><b>→ TCP →</b><span>Server calculation</span><b>→ TCP →</b><span>Client result</span></div><p>Request: <code>${escape(JSON.stringify({a,op,b}))}</code></p><p>Response: <code>${escape(JSON.stringify(result))}</code></p><p>${'error'in result?'The server returns an error and stays available.':'The arithmetic happens on the server; the client only sends inputs and displays the returned value.'}</p>`;}
+function upperVisual(){const text=$('upper-input').value,drop=$('upper-drop').checked;$('upper-result').innerHTML=`<div class="flow"><span>Client: ${escape(JSON.stringify(text))}</span><b>→ UDP →</b><span>Server: .upper()</span><b>→ UDP →</b><span>${drop?'Reply lost':escape(JSON.stringify(text.toUpperCase()))}</span></div><p>${drop?'No reply arrives in this simulated case. The real client waits up to five seconds, then reports a failure. UDP does not automatically retransmit.':'recvfrom() gives the sender’s address; the server sends the converted text back there. This view demonstrates conversion, not real network traffic.'}</p>`;}
+function sequence(prefix,labels,descriptions){let event=0;function render(){$(prefix+'-flow').innerHTML=labels.map((label,i)=>`${i?'<b>→</b>':''}<span class="${i===event?'on':''}">${label}</span>`).join('');$(prefix+'-detail').textContent=descriptions[event];$(prefix+'-count').textContent=`${event+1} / ${labels.length}`;$(prefix+'-next').textContent=event===labels.length-1?'Start sequence again':'Next event';}$(prefix+'-next').onclick=()=>{event=(event+1)%labels.length;render();};render();}
+function faultVisual(repair=false){const fault=$('fault-kind').value;const info={dhcp:['DNS server: 192.168.10.99 (wrong)','Request times out; no correct DNS response.','Edit DHCP pool College → DNS Server = 192.168.10.2 → Save. Renew client leases and confirm the new DNS address.'],missing:['DNS server: 192.168.10.2','DNS server reachable, but www.college.test has no A record.','Enable DNS and add A record www.college.test → 192.168.10.2. Save and query again.'],wrong:['DNS server: 192.168.10.2','www.college.test resolves to 192.168.10.99 (wrong).','Edit the A record so www.college.test maps to 192.168.10.2, then retest after cache expiry or clearing.'],http:['DNS server: 192.168.10.2','www.college.test correctly resolves to 192.168.10.2.','Services → HTTP → On. Save index.html. DNS was already correct; the application service was the problem.']}[fault];$('fault-result').innerHTML=repair?`<strong>Repair</strong><p>${info[2]}</p><p>Retest: server ping succeeds; name resolves to 192.168.10.2; both IP and hostname URLs load.</p>`:table(['Simulated check','Observed result'],[['DHCP lease','192.168.10.100/24, gateway 192.168.10.1. '+info[0]],['ping 192.168.10.2','Succeeds'],['http://192.168.10.2',fault==='http'?'Fails: HTTP service is Off.':'College page loads.'],['nslookup www.college.test',info[1]],['http://www.college.test','Fails until the configured issue is repaired.']]);}
+
+let current=1,completed={};try{completed=JSON.parse(localStorage.getItem('cn-exam-practice-v1')||'{}')||{};}catch{}
+function bindInteractions(id){refreshDiagram=()=>{};if(id===1){$('topology-kind').onchange=topologyVisual;$('topology-fault').onchange=topologyVisual;refreshDiagram=topologyVisual;topologyVisual();}if(id===2)hamVisual();if(id===3){refreshDiagram=()=>diagram('subnet-svg',[N('Lab A',.15,.45,'.10, .20 /25'),N('R1',.5,.45,'.1 / .129'),N('Lab B',.85,.45,'.130, .140 /25')],[[0,1,'','live'],[1,2,'','live']]);refreshDiagram();}if(id===4){$('subnet-count').onchange=subnetVisual;subnetVisual();}if(id===5){refreshDiagram=()=>diagram('rip-svg',[N('R1',.15,.28,'LAN .10.0/24'),N('R2',.5,.28,'LAN .20.0/24'),N('R3',.85,.28,'LAN .30.0/24'),N('PC1',.15,.75),N('PC2',.5,.75),N('PC3',.85,.75)],[[0,1,'/30','live'],[1,2,'/30','live'],[0,3],[1,4],[2,5]],'Transit: 10.0.12.0/30 and 10.0.23.0/30');refreshDiagram();}if(id===6)dvrVisual();if(id===7)messageVisual();if(id===8){$('calc-go').onclick=calcVisual;calcVisual();}if(id===9){$('upper-go').onclick=upperVisual;$('upper-drop').onchange=upperVisual;upperVisual();}if([10,12,13].includes(id)){const two=id===12;refreshDiagram=()=>diagram('services-svg',two?[N('Dept A',.15,.3,'192.168.10.0/24'),N('R1',.5,.3,'G0/1: helper'),N('Dept B',.85,.3,'192.168.20.0/24'),N('Server',.15,.75,'.10.2 static')]:[N('PCs',.15,.45,'DHCP clients'),N('Switch',.5,.45),N('Server',.85,.45,'.10.2 static'),N('R1',.5,.12,'.10.1 gateway')],two?[[0,1,'','live'],[1,2,'','live'],[0,3]]:[[0,1],[1,2],[1,3]]);refreshDiagram();sequence('service',['DHCP','DNS','HTTP',...(id===13?['SMTP / POP3']:[])],['Discover → Offer → Request → ACK. Client learns IP, mask, gateway and DNS.'+(two?' Department B’s broadcasts need the G0/1 helper.':''),'Client queries the advertised DNS server for the website hostname and receives 192.168.10.2.','Client connects to the web server at that IP; HTTP returns the saved index.html.',...(id===13?['SMTP sends email to the server; the recipient clicks Receive to retrieve it using POP3.']:[])]);}if(id===11){refreshDiagram=()=>diagram('email-svg',[N('Alice',.15,.4,'.10.10'),N('Mail server',.5,.4,'.10.2'),N('Bob',.85,.4,'.10.11')],[[0,1,'SMTP','live'],[1,2,'POP3','live']]);refreshDiagram();sequence('mail',['Compose','SMTP send','Mailbox','POP3 receive'],['Alice composes a message addressed to bob@company.test.','Alice’s client sends the message to the configured outgoing server.','The server stores the message for the account bob.','Bob clicks Receive. His POP3 client authenticates and downloads the message.']);}if(id===14){$('fault-kind').onchange=()=>faultVisual();$('fault-test').onclick=()=>faultVisual();$('fault-fix').onclick=()=>faultVisual(true);faultVisual();}}
+function render(id){current=id;const item=lessons[id-1];$('question-select').value=String(id);$('lesson').innerHTML=`<div class="question-header"><span class="q-number">${String(id).padStart(2,'0')}</span><span class="tag">${item.type}</span><span class="tag">${item.pattern}</span></div><h2>${item.title}</h2><p class="prompt">${escape(item.prompt)}</p><div class="recall-prompt"><h3>Your mock attempt</h3><ol><li>Open a blank ${item.type==='Python'?'.py file':'.pkt workspace'}.</li><li>State the inputs, the plan and the expected result.</li><li>Perform the task without looking at the worked lesson.</li><li>Test a successful case and a failure or boundary case.</li><li>Turn off Recall mode, compare, and explain any correction.</li></ol></div><div class="lesson-content">${item.body()}</div>`;$('previous').disabled=id===1;$('next').disabled=id===14;$('practised').checked=Boolean(completed[id]);updateProgress();bindInteractions(id);
+document.querySelectorAll('.quiz button').forEach(button=>button.onclick=()=>{const q=button.closest('.quiz');q.querySelector('.feedback').textContent=(button.dataset.choice===q.dataset.answer?'Correct. ':'Try again. ')+q.dataset.explanation;});
+document.querySelectorAll('[data-copy]').forEach(button=>button.onclick=async()=>{const key=button.dataset.copy;try{await navigator.clipboard.writeText(programs[key]);document.querySelector(`[data-copy-status="${key}"]`).textContent='Copied.';}catch{document.querySelector(`[data-copy-status="${key}"]`).textContent='Select the code and copy it using your keyboard, or choose Save .py.';}});
+document.querySelectorAll('[data-download]').forEach(button=>button.onclick=()=>{const key=button.dataset.download,blob=new Blob([programs[key]],{type:'text/x-python;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=programNames[key];a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+try{history.replaceState(null,'','#q'+id);}catch{} }
+function updateProgress(){$('progress').textContent=`${lessons.filter(l=>completed[l.id]).length} / 14 questions marked practised${storageAvailable()?' · saved in this browser':' · progress may last only for this session'}.`;}
+function storageAvailable(){try{return typeof localStorage.getItem('cn-exam-practice-v1')==='string';}catch{return false;}}
+$('question-select').innerHTML=lessons.map(l=>`<option value="${l.id}">${String(l.id).padStart(2,'0')} · ${l.title}</option>`).join('');$('question-index').innerHTML=lessons.map(l=>`<a href="#q${l.id}" data-question="${l.id}"><span class="mono">${String(l.id).padStart(2,'0')}</span> · ${l.title} <span class="caption">/ ${l.type}</span></a>`).join('');
+$('question-select').onchange=()=>{$('draw-status').textContent='';render(+$('question-select').value);};$('draw').onclick=()=>{const id=1+Math.floor(Math.random()*14);render(id);$('draw-status').textContent=`You drew question ${id}. Use Recall mode to attempt it before opening the solutions.`;};$('previous').onclick=()=>render(current-1);$('next').onclick=()=>render(current+1);$('recall').onchange=()=>{document.body.classList.toggle('recall',$('recall').checked);refreshDiagram();};$('practised').onchange=()=>{completed[current]=$('practised').checked;try{localStorage.setItem('cn-exam-practice-v1',JSON.stringify(completed));}catch{}updateProgress();};document.querySelectorAll('[data-question]').forEach(a=>a.onclick=e=>{e.preventDefault();render(+a.dataset.question);$('overview').open=false;});window.addEventListener('hashchange',()=>{const match=location.hash.match(/^#q(\d+)$/);if(match&&+match[1]>=1&&+match[1]<=14)render(+match[1]);});
+const match=location.hash.match(/^#q(\d+)$/);render(match&&+match[1]>=1&&+match[1]<=14?+match[1]:1);
+let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>refreshDiagram(),120);});
+})();
+</script>
+</body>
+</html>

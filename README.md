@@ -17,6 +17,14 @@ On macOS:
 open lessons/network-lab.html
 ```
 
+For the complete 14-question exam set, open the separate lesson file. It includes
+Packet Tracer instructions, address plans, Python downloads, and random question
+practice:
+
+```sh
+open lessons/exam-14-lessons.html
+```
+
 Run the algorithm assignments from the repository root:
 
 ```sh
